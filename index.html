@@ -7,7 +7,7 @@
     <title>Drag & Drop</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://poseidon-code.github.io/supacons/dist/supacons.all.css" />
-    <script src="script.js" defer></script>
+    <script src="script.js" type="module" defer></script>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         <div class="container">
             <h3>Upload Files</h3>
             <form action="#" enctype="multipart/form-data">
-                <div class="drop-div">
+                <div class="drop-zone">
                     <p><i class="icon-plus fa-sharp fa-regular fa-circle-plus"></i></p>
                     <p>Drag & Drop or Click to choose files</p>
                     <p class="warning-p"><i class="icon-warning fa-sharp fa-regular fa-circle-exclamation"></i> Max file
@@ -29,8 +29,8 @@
                         <span class="attach-icon"><i class="fa-regular fa-file"></i></span>
                     </div>
                     <div class="file-details">
-                        <p class="file-name">Sample file name</p>
-                        <p class="file__size__type">adfa</p>
+                        <p class="file-name" id="file-name">Sample file name</p>
+                        <p class="file__size__type" id="file-ext-size">adfa</p>
                     </div>
                 </div>
                 <div class="uploader-item-div__right">
