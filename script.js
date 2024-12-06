@@ -1,5 +1,7 @@
 import { _var } from "./variables.js";
 
+let files;
+
 main(); // main Function call
 
 function main() { // Main Function Declaration
@@ -12,7 +14,7 @@ function Events() {
         _var.file_input().click();
     });
     _var.file_input().addEventListener('change', (e) => {
-        const files = e.target.files;
+        files = e.target.files;
         if ((files.length > 0) && (files[0].size <= (10 * 1024 * 1024))) {
             _var.file_name().textContent = files[0].name.split('.')[0];
             let file_size = files[0].size >= (1024 * 1024) ? `${(files[0].size / (1024 * 1024)).toFixed(2)
@@ -28,5 +30,13 @@ function Events() {
         _var.file_name().textContent = '';
         _var.file_details().textContent = '';
         _var.file_show().style.display = 'none';
+    })
+    _var.download_file().addEventListener('click', (e) => {
+        let obj = URL.createObjectURL(files[0]);
+        let a = document.createElement('a');
+        a.href = obj;
+        a.download = files[0].name;
+        a.click();
+        URL.revokeObjectURL(obj);
     })
 }
