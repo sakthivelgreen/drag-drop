@@ -13,7 +13,7 @@ function Events() {
     });
     _var.file_input().addEventListener('change', (e) => {
         const files = e.target.files;
-        if (files[0].size <= (10 * 1024 * 1024)) {
+        if ((files.length > 0) && (files[0].size <= (10 * 1024 * 1024))) {
             _var.file_name().textContent = files[0].name.split('.')[0];
             let file_size = files[0].size >= (1024 * 1024) ? `${(files[0].size / (1024 * 1024)).toFixed(2)
                 } MB` : `${(files[0].size / 1024).toFixed(2)} KB`;
@@ -22,5 +22,11 @@ function Events() {
         } else {
             alert('Maximum file size should be 10 MB')
         }
+    })
+    _var.delete_file().addEventListener('click', (e) => {
+        _var.file_input.value = '';
+        _var.file_name().textContent = '';
+        _var.file_details().textContent = '';
+        _var.file_show().style.display = 'none';
     })
 }
