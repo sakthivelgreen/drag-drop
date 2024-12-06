@@ -5,13 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drag & Drop</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://poseidon-code.github.io/supacons/dist/supacons.all.css" />
     <script src="script.js" defer></script>
 </head>
 
 <body>
-    <h1>Hello World!</h1>
+    <div class="wrapper">
+        <div class="container">
+            <h3>Upload Files</h3>
+            <form action="#" enctype="multipart/form-data">
+                <div class="drop-div">
+                    <p><i class="icon-plus fa-sharp fa-regular fa-circle-plus"></i></p>
+                    <p>Drag & Drop or Click to choose files</p>
+                    <p class="warning-p"><i class="icon-warning fa-sharp fa-regular fa-circle-exclamation"></i> Max file
+                        size: 10 MB</p>
+                    <input type="file" name="file" id="file" hidden>
+                </div>
+            </form>
+            <div class="uploaded-item-div">
+                <div class="uploaded-item-div__left">
+                    <div>
+                        <span class="attach-icon"><i class="fa-regular fa-file"></i></span>
+                    </div>
+                    <div class="file-details">
+                        <p class="file-name">Sample file name</p>
+                        <p class="file__size__type">adfa</p>
+                    </div>
+                </div>
+                <div class="uploader-item-div__right">
+                    <div class="download-delete-icon">
+                        <span class="download-icon icon" id="download-file"><i
+                                class="fa-sharp fa-thin fa-circle-down"></i></span>
+                        <span class="delete-icon icon" id="delete-file"><i
+                                class="fa-sharp fa-thin fa-circle-trash"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -1,9 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+:root {
+    --background-color: #F5F5F5;
+    --container-background: #FFFFFF;
+    --text-color: #000;
+    --accent-color-1: #747474;
+    --primary-border: #F2F2F2;
+}
+
+/* [data-theme='dark'] {
+    --background-color: #F5F5F5;
+    --container-background: #FFFFFF;
+    --text-color: #000;
+    --accent-color-1: #747474;
+    --primary-border: #F2F2F2;
+} */
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.3s ease;
 }
 
 html,
@@ -15,4 +33,97 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 400;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+.container {
+    height: 350px;
+    width: 500px;
+    background-color: var(--container-background);
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    flex: 1 1 auto;
+    margin-bottom: 20px;
+}
+
+.drop-div {
+    margin-top: 20px;
+    border: 2px dotted #E0E0E0;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--accent-color-1);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.icon-plus {
+    font-size: 30px;
+}
+
+.warning-p {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.uploaded-item-div {
+    border: 1.5px solid #E0E0E0;
+    height: 60px;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 5px;
+    color: var(--accent-color-1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    display: none;
+}
+
+.uploaded-item-div__left {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.icon,
+.attach-icon {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.icon i:hover {
+    font-size: 30px;
+    transition: font-size 0.3s ease-in;
+}
+
+.attach-icon {
+    color: #FF6C47;
+}
+
+.file-name {
+    color: #000;
+}
+
+.file__size__type {
+    font-size: 12px;
 }
