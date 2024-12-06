@@ -103,6 +103,9 @@ form {
     align-items: center;
     padding: 10px;
     gap: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .icon,
